@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Parking - Tec de Monterrey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Smart Parking – Tec de Monterrey</h1>
+        <p>Campus Querétaro · Simulación de Sensores IoT (Lab 3)</p>
+    </header>
+
+    <main>
+        <!-- Dashboard de control -->
+        <section class="dashboard">
+            <div class="tarjeta">
+                <span>Total de espacios</span>
+                <strong id="total">0</strong>
+            </div>
+            <div class="tarjeta">
+                <span>Disponibles</span>
+                <strong id="disponibles" class="texto-verde">0</strong>
+            </div>
+            <div class="tarjeta">
+                <span>Ocupados</span>
+                <strong id="ocupados" class="texto-rojo">0</strong>
+            </div>
+            <div class="tarjeta">
+                <span>Ocupación</span>
+                <strong id="porcentaje">0%</strong>
+                <div class="barra-fondo">
+                    <div id="barra-progreso"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Controles y leyenda -->
+        <section class="barra-herramientas">
+            <div class="leyenda">
+                <span><i class="cuadro libre"></i> Disponible</span>
+                <span><i class="cuadro ocupado"></i> Ocupado</span>
+                <span><i class="cuadro borde-azul"></i> Discapacitados</span>
+                <span><i class="cuadro borde-amarillo"></i> Descarga</span>
+                <span class="nota">(Haz clic en un cajón para cambiar su estado)</span>
+             </div>
+            <div class="botones">
+                <button id="btn-pausar" onclick="toggleSimulacion()">Pausar simulación</button>
+                <button onclick="reiniciar()">Reiniciar aleatorio</button>
+            </div>
+        </section>
+
+        <!-- Mapa del estacionamiento (referencia visual Campus Qro) -->
+        <section class="contenedor-mapa">
+            <div class="estacionamiento">
+                
+                <!-- Fila superior en paralelo -->
+                <div class="seccion-horizontal">
+                    <span class="etiqueta-fila">FILA L (Paralelo)</span>
+                    <div id="fila-L" class="grid-horizontal"></div>
+                </div>
+
+                <!-- Sección central: Fila A + 5 Islas dobles -->
+                <div class="seccion-central">
+                    <div class="bloque">
+                        <span class="etiqueta-fila">FILA A</span>
+                        <div id="fila-A" class="columna"></div>
+                    </div>
+
+                    <div class="pasillo">Carril</div>
+
+                    <div class="isla">
+                        <span class="etiqueta-fila">ISLA 1 (B / C)</span>
+                        <div class="doble-columna">
+                            <div id="fila-B" class="columna"></div>
+                            <div id="fila-C" class="columna"></div>
+                        </div>
+                    </div>
+
+                    <div class="pasillo">
+                     Carril 
+                    </div>
+
+                    <div class="isla">
+                        <span class="etiqueta-fila">ISLA 2 (D / E)</span>
+                        <div class="doble-columna">
+                            <div id="fila-D" class="columna"></div>
+                            <div id="fila-E" class="columna"></div>
+                        </div>
+                    </div>
+
+                    <div class="pasillo">Carril</div>
+
+                    <div class="isla">
+                        <span class="etiqueta-fila">ISLA 3 (F / G)</span>
+                        <div class="doble-columna">
+                            <div id="fila-F" class="columna"></div>
+                            <div id="fila-G" class="columna"></div>
+                        </div>
+                    </div>
+
+                    <div class="pasillo">Carril</div>
+                        
+
+                    <div class="isla">
+                        <span class="etiqueta-fila">ISLA 4 (H / I)</span>
+                        <div class="doble-columna">
+                            <div id="fila-H" class="columna"></div>
+                            <div id="fila-I" class="columna"></div>
+                        </div>
+                    </div>
+
+                    <div class="pasillo">Carril</div>
+
+                    <div class="isla">
+                        <span class="etiqueta-fila">ISLA 5 (J / K)</span>
+                        <div class="doble-columna">
+                            <div id="fila-J" class="columna"></div>
+                            <div id="fila-K" class="columna"></div>
+                        </div>
+                    </div>
+                    <div class="pasillo">Carril</div>
+                </div>
+
+                
+
+                <!-- Fila inferior en paralelo -->
+                <div class="seccion-horizontal">
+                    <span class="etiqueta-fila">FILA M (Paralelo)</span>
+                    <div id="fila-M" class="grid-horizontal"></div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

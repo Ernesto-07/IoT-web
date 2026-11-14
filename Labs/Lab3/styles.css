@@ -1,0 +1,263 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f2f5;
+    color: #222;
+    padding-bottom: 30px;
+}
+
+header {
+    background-color: #0039a6; /* Azul Tec */
+    color: white;
+    text-align: center;
+    padding: 18px;
+}
+
+header h1 {
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+header p {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+main {
+    max-width: 1250px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* Dashboard */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.tarjeta {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #dcdcdc;
+    text-align: center;
+}
+
+.tarjeta span {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.tarjeta strong {
+    font-size: 26px;
+}
+
+.texto-verde { color: #27ae60; }
+.texto-rojo { color: #c0392b; }
+
+.barra-fondo {
+    width: 100%;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+#barra-progreso {
+    height: 100%;
+    width: 0%;
+    background-color: #0039a6;
+    transition: width 0.3s;
+}
+
+/* Barra de leyenda y botones */
+.barra-herramientas {
+    background: white;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #dcdcdc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+.leyenda span {
+    margin-right: 15px;
+}
+
+.cuadro {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+.nota {
+    color: #666;
+    font-style: italic;
+}
+
+.botones button {
+    padding: 7px 12px;
+    border: 1px solid #bbb;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.botones button:hover {
+    background-color: #e2e6ea;
+}
+
+/* Estacionamiento */
+.contenedor-mapa {
+    overflow-x: auto;
+}
+
+.estacionamiento {
+    min-width: 1120px;    
+    background-color: #2f3542; 
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+.etiqueta-fila {
+    display: block;
+    font-size: 11px;
+    color: #ced6e0;
+    text-align: center;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.seccion-horizontal {
+    background-color: #3d4452;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.grid-horizontal {
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+}
+.grid-horizontal .cajon {
+    width: 76px;
+}
+
+.seccion-central {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 18px 0;
+    gap: 6px;
+}
+
+.bloque, .isla {
+    background-color: #3d4452;
+    padding: 10px 8px;
+    border-radius: 6px;
+    flex: 1;
+}
+
+.bloque {
+    max-width: 95px;
+}
+
+.doble-columna {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.pasillo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #ffa502;
+    border-left: 1px dashed #747d8c;
+    border-right: 1px dashed #747d8c;
+    padding: 0 4px;
+}
+
+/* Cajones */
+.cajon {
+    height: 24px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.cajon:hover {
+    opacity: 0.85;
+}
+
+.libre {
+    background-color: #2ecc71;
+    border: 1px solid #27ae60;
+}
+
+.ocupado {
+    background-color: #e74c3c;
+    border: 1px solid #c0392b;
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Cajones especiales */
+.discapacitado {
+    border: 2px solid #3498db;
+}
+
+.descarga {
+    border: 2px dashed #f1c40f;
+}
+
+/* Iconos  */
+.borde-azul {
+    background-color: #2ecc71;
+    border: 2px solid #3498db;
+}
+
+.borde-amarillo {
+    background-color: #2ecc71;
+    border: 2px dashed #f1c40f;
+}
